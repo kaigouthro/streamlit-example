@@ -16,7 +16,7 @@ from streamlit_option_menu import option_menu
 
 st_state = st.session_state
 
-API_KEY             = ""
+API_KEY       : str = "NONE"
 st_state["api_key"] = API_KEY
 
 
@@ -769,6 +769,8 @@ st_state['Initialized'] =  'Initialized' in st_state or False
 if not st_state['Initialized']:
     Initializer(st_state)
     st_state['Initialized'] = True
+
+openai.api_key   = get_api_key()
 
 # cache the state
 st.cache(lambda: st_state, allow_output_mutation=True)
