@@ -147,16 +147,20 @@ def on_change(key):
     st.write(selection)
 
 
-def get_api_key():
+def get_api_key(sl_state):
     """get api key if none is stored in session state"""
+    api_ke = " "
     if st.session_state.api_key:
         api_key =  st.session_state.api_key
-        if api_key == st_state.api_key:
+        if api_key == st_state["api_key"] :
             return api_key
         if api_key == st.text_input("Enter your API key"):
-            st_state.api_key = api_key
+            st_state["api_key"]  = api_key
             return api_key
-    return ""
+    else:
+        api_key = st_state["api_key"] = st.text_input("Enter your API key")
+    return api_key
+
 
 
 def get_models():
@@ -770,7 +774,7 @@ if not st_state['Initialized']:
     Initializer(st_state)
     st_state['Initialized'] = True
 
-openai.api_key   = get_api_key()
+openai.api_key   = get_api_key(sl_state)
 
 # cache the state
 st.cache(lambda: st_state, allow_output_mutation=True)
