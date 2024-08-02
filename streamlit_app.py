@@ -14,7 +14,7 @@ from datasets import load_dataset
 import streamlit as st
 from streamlit_option_menu import option_menu
 
-sl_state = st.session_state
+st_state = st.session_state
 
 # API_KEY       : str = st.text_input("API",key="api_key")
 
@@ -146,7 +146,7 @@ def on_change(key):
     st.write(selection)
 
 
-def get_api_key(sl_state):
+def get_api_key(st_state):
     """get api key if none is stored in session state"""
     api_ke = " "
     if st.session_state.api_key:
@@ -773,7 +773,7 @@ if not st_state['Initialized']:
     Initializer(st_state)
     st_state['Initialized'] = True
 
-openai.api_key   = get_api_key(sl_state)
+openai.api_key   = get_api_key(st_state)
 
 # cache the state
 st.cache(lambda: st_state, allow_output_mutation=True)
