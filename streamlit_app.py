@@ -14,7 +14,7 @@ from datasets import load_dataset
 import streamlit as st
 from streamlit_option_menu import option_menu
 
-st_state = st.session_state
+sl_state = st.session_state
 
 # API_KEY       : str = st.text_input("API",key="api_key")
 
