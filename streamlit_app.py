@@ -173,7 +173,7 @@ def get_models():
 
 
 def sidebar_options():
-    openai.api_key          = get_api_key()
+    openai.api_key          = get_api_key(st_state)
     st_state["model"]       = st.sidebar.selectbox("Completion Engine", get_models())
     st_state["temperature"] = st.sidebar.slider(
         "Temperature:", 0.0, 1.0, 0.2, step = 0.01
@@ -201,9 +201,7 @@ def sidebar_options():
 
 
 class Initializer:
-
     """set up the state for presets"""
-
     def __init__(self, state):
         self.initialized          = None
         self.state                = state
