@@ -22,7 +22,7 @@ API_KEY       : str = st.text_input("API",key="api_key")
 PRESETFOLDER = "./presets"
 OUTPUTFOLDER = "./output"
 
-st.set_page_config(layout="wide")
+# st.set_page_config(layout="wide")
 
 
 from dataclasses import dataclass
