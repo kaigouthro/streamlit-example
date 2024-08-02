@@ -149,7 +149,7 @@ def on_change(key):
 
 def get_api_key(st_state):
     """get api key if none is stored in session state"""
-    api_ke = " "
+    api_key = " "
     if st.session_state.api_key:
         api_key =  st.session_state.api_key
         if api_key == st_state["api_key"] :
