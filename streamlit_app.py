@@ -16,7 +16,7 @@ from streamlit_option_menu import option_menu
 
 st_state = st.session_state
 
-API_KEY       : str = st.text_input("API",key="api_key")
+# API_KEY       : str = st.text_input("API",key="api_key")
 
 
 PRESETFOLDER = "./presets"
